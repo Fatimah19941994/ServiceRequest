@@ -13,6 +13,7 @@
 		7EDD093D28AAD4EF003FD20D /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDD093C28AAD4EF003FD20D /* ListView.swift */; };
 		7EDD093F28AAD768003FD20D /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDD093E28AAD768003FD20D /* RowView.swift */; };
 		7EDD094128AADA9A003FD20D /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDD094028AADA9A003FD20D /* AddView.swift */; };
+		7EDD094428AAE061003FD20D /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDD094328AAE061003FD20D /* Service.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		7EDD093C28AAD4EF003FD20D /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		7EDD093E28AAD768003FD20D /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
 		7EDD094028AADA9A003FD20D /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		7EDD094328AAE061003FD20D /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				7EDD092D28AACB3F003FD20D /* ServiceRequestApp.swift */,
+				7EDD094228AAE00A003FD20D /* Models */,
 				7EDD093B28AAD4B2003FD20D /* Views */,
 				7EDD093128AACB40003FD20D /* Assets.xcassets */,
 				7EDD093328AACB40003FD20D /* Preview Content */,
@@ -79,6 +82,14 @@
 				7EDD094028AADA9A003FD20D /* AddView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		7EDD094228AAE00A003FD20D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7EDD094328AAE061003FD20D /* Service.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +164,7 @@
 			files = (
 				7EDD094128AADA9A003FD20D /* AddView.swift in Sources */,
 				7EDD092E28AACB3F003FD20D /* ServiceRequestApp.swift in Sources */,
+				7EDD094428AAE061003FD20D /* Service.swift in Sources */,
 				7EDD093F28AAD768003FD20D /* RowView.swift in Sources */,
 				7EDD093D28AAD4EF003FD20D /* ListView.swift in Sources */,
 			);
