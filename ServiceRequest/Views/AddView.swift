@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct AddView: View {
-    @State var textf: String = ""
+@Environment(\.presentationMode) var presentationMode //keypath
+    
+@EnvironmentObject var listViewModel: ListViewModel
+    
+ @State var textf: String = ""
     
     var body: some View {
         ScrollView{
@@ -19,9 +23,7 @@ struct AddView: View {
                 .frame(height:50)
                 .cornerRadius(10)
                 
-                Button(action:{
-                    
-                } , label:{
+        Button(action: saveButten, label:{
                 Text("Send")
                         .foregroundColor(.white)
                         .font(.title2)
@@ -38,6 +40,12 @@ struct AddView: View {
         }
         .navigationTitle("Request Service 💄")
     }
+    
+ func saveButten() {
+        //to go back one in the view hierarchy
+listViewModel.addItem(title: textf)
+presentationMode.wrappedValue.dismiss()
+    }
 }
 
 struct AddView_Previews: PreviewProvider {
@@ -45,5 +53,6 @@ struct AddView_Previews: PreviewProvider {
         NavigationView{
         AddView()
         }
+    .environmentObject(ListViewModel())
     }
 }

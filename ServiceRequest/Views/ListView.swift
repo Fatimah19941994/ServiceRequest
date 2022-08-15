@@ -8,20 +8,16 @@
 import SwiftUI
 
 struct ListView: View {
-    
-@State var items: [Service] = [
-Service(title: "Makeup", isCompleted: false),
-Service(title: "Hairstyle", isCompleted: true),
-Service(title: "Lash Lifting", isCompleted: false),
-    ]
+@EnvironmentObject var listViewModel: ListViewModel
+
     
     var body: some View {
         List{
-            ForEach(items) { item in
+    ForEach(listViewModel.items) { item in
        RowView(item: item)
-            //  RowView(title: item)
-                
             }
+    .onDelete(perform: listViewModel.deleteItem)
+    .onMove(perform: listViewModel.moveItem)
         }
         
         .navigationTitle("Requests 💄")
@@ -31,6 +27,8 @@ Service(title: "Lash Lifting", isCompleted: false),
 NavigationLink("Add", destination: AddView())
             )
     }
+   
+
 }
 
 struct ListView_Previews: PreviewProvider {
@@ -38,6 +36,7 @@ struct ListView_Previews: PreviewProvider {
         NavigationView{
         ListView()
         }
+        .environmentObject(ListViewModel())
     }
 }
 
