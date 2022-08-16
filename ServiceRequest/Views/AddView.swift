@@ -17,11 +17,13 @@ struct AddView: View {
     @State var showAlert: Bool = false
     
     var body: some View {
+        
       
         ScrollView{
+            
             ZStack{
-                LinearGradient(gradient: Gradient(colors: [Color.purple,Color.white]), startPoint: .topLeading, endPoint: .bottomTrailing)
-                
+               LinearGradient(gradient: Gradient(colors: [Color.purple,Color.white]), startPoint: .topLeading, endPoint: .bottomTrailing)
+              
                 VStack {
                 
            Image("makeup")
@@ -52,7 +54,7 @@ struct AddView: View {
         }
             .padding()
         
-        .navigationTitle("Request Service 💄")
+     .navigationTitle("Request Service 💄")
         .alert(isPresented: $showAlert, content: getAlert)
     }
     }
