@@ -11,12 +11,18 @@ struct AddView: View {
 @Environment(\.presentationMode) var presentationMode //keypath
     
 @EnvironmentObject var listViewModel: ListViewModel
-    
  @State var textf: String = ""
     
+    @State var alertTitle: String = ""
+    @State var showAlert: Bool = false
+    
     var body: some View {
+        ZStack{
+            background(Color.blue)
+            
         ScrollView{
-            VStack{
+          
+                
         TextField("Enter your request",text: $textf)
                 .padding()
               .background(Color(.secondarySystemBackground))
@@ -39,13 +45,33 @@ struct AddView: View {
             .padding()
         }
         .navigationTitle("Request Service 💄")
+        .alert(isPresented: $showAlert, content: getAlert)
     }
     
+    
  func saveButten() {
-        //to go back one in the view hierarchy
+     if textIsAppropiate() {
 listViewModel.addItem(title: textf)
 presentationMode.wrappedValue.dismiss()
+         //to go back one in the view hierarchy
     }
+ }
+    
+    func textIsAppropiate() -> Bool {
+        if textf.count < 3 {
+    alertTitle = "Enter more than 3 letters"
+            showAlert.toggle()
+            return false
+        }
+        return true
+    }
+    
+
+
+func getAlert() -> Alert {
+    
+    return Alert (title: Text(alertTitle))
+    
 }
 
 struct AddView_Previews: PreviewProvider {
@@ -56,3 +82,5 @@ struct AddView_Previews: PreviewProvider {
     .environmentObject(ListViewModel())
     }
 }
+}
+    
