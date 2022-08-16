@@ -19,23 +19,31 @@ struct AddView: View {
     var body: some View {
       
         ScrollView{
-            
-          
+            ZStack{
+                LinearGradient(gradient: Gradient(colors: [Color.purple,Color.white]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 
+                VStack {
+                
+           Image("makeup")
+            .resizable()
+            .frame(width: 300, height: 200)
+            .padding()
+            
         TextField("Enter your request",text: $textf)
                 .padding()
                 .padding()
               .background(Color(.secondarySystemBackground))
                 .frame(height:50)
-                .cornerRadius(10)
+                .cornerRadius(50)
                 
         Button(action: saveButten, label:{
-                Text("Send")
+                Text("+ Add New Service")
                         .foregroundColor(.white)
                         .font(.title2)
+                        //.fontWeight(.heavy)
                         .frame(height:50)
                         .frame(width:300)
-                        .background(Color.blue)
+                        .background(Color.purple)
                         .cornerRadius(10)
                         .padding()
                  
@@ -47,7 +55,8 @@ struct AddView: View {
         .navigationTitle("Request Service 💄")
         .alert(isPresented: $showAlert, content: getAlert)
     }
-    
+    }
+    }
     
  func saveButten() {
      if textIsAppropiate() {

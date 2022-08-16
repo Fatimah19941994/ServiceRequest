@@ -15,11 +15,16 @@ struct ListView: View {
         List{
     ForEach(listViewModel.items) { item in
        RowView(item: item)
+          
+           
+        
             }
+            
     .onDelete(perform: listViewModel.deleteItem)
     .onMove(perform: listViewModel.moveItem)
         }
-        
+    
+    
         .navigationTitle("Requests 💄")
         .navigationBarItems(
             leading: EditButton(),

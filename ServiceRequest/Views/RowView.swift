@@ -19,7 +19,13 @@ struct RowView: View {
             Spacer()
             
         }
+        
         .font(.title2)
+        .foregroundColor(.white)
+        .padding()
+        .frame(width: 300, height:70)
+        .background(Color.purple)
+        .cornerRadius(10)
         .padding()
     }
 }
