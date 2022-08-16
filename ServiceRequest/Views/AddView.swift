@@ -17,13 +17,13 @@ struct AddView: View {
     @State var showAlert: Bool = false
     
     var body: some View {
-        ZStack{
-            background(Color.blue)
-            
+      
         ScrollView{
+            
           
                 
         TextField("Enter your request",text: $textf)
+                .padding()
                 .padding()
               .background(Color(.secondarySystemBackground))
                 .frame(height:50)
@@ -43,7 +43,7 @@ struct AddView: View {
 
         }
             .padding()
-        }
+        
         .navigationTitle("Request Service 💄")
         .alert(isPresented: $showAlert, content: getAlert)
     }

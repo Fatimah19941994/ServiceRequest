@@ -26,6 +26,8 @@ struct ListView: View {
             trailing:
 NavigationLink("Add", destination: AddView())
             )
+        
+        
     }
     
    
